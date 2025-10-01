@@ -1,8 +1,8 @@
 import buffer from 'node:buffer'
 import zlib from 'node:zlib'
 
-export default function vitePluginBrotli() {
-  const threshold = 4096 // 4kb
+export default function vitePluginBrotli(options = {}) {
+  const { threshold = 4096 } = options
 
   return {
     name: 'vite-plugin-brotli',
