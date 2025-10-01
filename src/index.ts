@@ -18,6 +18,7 @@ export default function vitePluginBrotli(options: Options = {}): Plugin {
     apply: 'build',
     generateBundle(_, bundle) {
       for (const [fileName, file] of Object.entries(bundle)) {
+        // handle html and css assets
         if (
           file.type === 'asset'
           && file.source
@@ -26,6 +27,22 @@ export default function vitePluginBrotli(options: Options = {}): Plugin {
           const fileSize = Buffer.byteLength(file.source as string | Buffer)
           if (fileSize > threshold) {
             const compressed = compress(file.source as string | Buffer)
+            this.emitFile({
+              type: 'asset',
+              fileName: `${fileName}.br`,
+              source: compressed,
+            })
+          }
+        }
+        // handle js chunks
+        if (
+          file.type === 'chunk'
+          && isCompressible(fileName)
+          && file.code
+        ) {
+          const fileSize = Buffer.byteLength(file.code)
+          if (fileSize > threshold) {
+            const compressed = compress(file.code)
             this.emitFile({
               type: 'asset',
               fileName: `${fileName}.br`,
