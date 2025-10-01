@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-brotli",
-  "type": "commonjs",
-  "version": "1.0.0",
+  "type": "module",
+  "version": "1.1.0",
   "description": "compress your Vite html, css and js files with brotli",
   "author": "Ian Baron",
   "license": "ISC",
