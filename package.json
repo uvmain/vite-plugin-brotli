@@ -5,6 +5,10 @@
   "description": "compress your Vite html, css and js files with brotli",
   "author": "Ian Baron",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/vite-plugin-brotli.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
