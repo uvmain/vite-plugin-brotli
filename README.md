@@ -7,7 +7,7 @@ A Vite plugin that compresses your HTML, CSS, and JS files using Brotli compress
 To install the plugin, run the following command:
 
 ```
-npm install vite-plugin-brotli --save-dev
+npm i -D vite-plugin-brotli
 ```
 
 ## Usage
@@ -18,16 +18,9 @@ import { defineConfig } from 'vite'
 import vitePluginBrotli from 'vite-plugin-brotli'
 
 export default defineConfig({
-  plugins: [vitePluginBrotli()]
-})
-```
-
-## Options
-You can customize the plugin's behavior by passing options:
-
-```javascript
-vitePluginBrotli({
-  // Options go here
+  plugins: [
+    vitePluginBrotli()
+  ]
 })
 ```
 

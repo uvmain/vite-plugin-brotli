@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite'
 
-declare function vitePluginBrotli(): Plugin
+declare function vitePluginBrotli(): Plugin<any>
 
-export default vitePluginBrotli
+export { vitePluginBrotli as default }
